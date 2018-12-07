@@ -35,27 +35,25 @@ public class CarController {
 
     //methods:
 
-    public static void main(String[] args) {
+    public void initCarcontroller() {
         // Instance of this class
-        CarController cc = new CarController();
 
-        cc.cars.add(new Volvo240(100, Color.green, "Volvo240", 2));
-        cc.cars.add(new Saab95(100, Color.green, "Saab95", 2, true));
-        cc.cars.add(new Scania(100, Color.green, "Scania", 2));
+
+
 
         int offset = 0;
 
-        for(Car car : cc.cars){
+        for(Car car : cars){
             car.getCurrentPos().setY(offset);
             offset = offset + 100;
         }
 
 
         // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
+        frame = new CarView("CarSim 1.0", this);
 
         // Start the timer
-        cc.timer.start();
+        timer.start();
     }
 
     /**
@@ -199,6 +197,10 @@ public class CarController {
         for (int i = 0; i < 4; i++) {
             car.turnLeft();
         }
+    }
+
+    public List<Car> getCars(){
+        return cars;
     }
 
 }
