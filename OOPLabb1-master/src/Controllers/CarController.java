@@ -31,7 +31,7 @@ public class CarController {
     // A list of cars, modify if needed
     List<Car> cars = new ArrayList<>();
     // An object that handles all creation of Vehicles.
-    VehicleFactory factory = new VehicleFactory();
+    private VehicleFactory factory = new VehicleFactory();
 
     //methods:
 
@@ -97,6 +97,10 @@ public class CarController {
             return true;
         }
         return false;
+    }
+
+    public VehicleFactory getFactory(){
+        return factory;
     }
     // ----------- Methods to connect the buttons to actions ---------------
 
