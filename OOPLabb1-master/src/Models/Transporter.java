@@ -16,7 +16,7 @@ public class Transporter<A extends Vehicle> {
     private double loadingProximity = 10;
     private boolean canLoad;
     private Position currentPos;
-    protected enum UnloadPriority {
+    public enum UnloadPriority {
         FIRSTIN, LASTIN
     }
 
@@ -57,7 +57,7 @@ public class Transporter<A extends Vehicle> {
      * setter for loadability
      * @param canLoad boolean true if loading should be possible
      */
-    protected void setCanLoad(boolean canLoad) {
+    public void setCanLoad(boolean canLoad) {
         this.canLoad = canLoad;
     }
 
@@ -70,7 +70,7 @@ public class Transporter<A extends Vehicle> {
      *
      * @param car The car which will get loaded.
      */
-    protected void loadCar(A car) {
+    public void loadCar(A car) {
 
         if (canLoad && loadedCars.size() <= maxLoad && checkProximity(car.getCurrentPos()) && !car.isLoaded()) {
             loadedCars.add(car);
@@ -87,7 +87,7 @@ public class Transporter<A extends Vehicle> {
      * Method which unloads the veichle that's been loaded most recently.
      * The Veichle will be unloaded in the transporters proximity.
      */
-    protected void unloadCar(Position point, UnloadPriority priority) {
+    public void unloadCar(Position point, UnloadPriority priority) {
         int index = 0;
         if (priority == priority.FIRSTIN){
             index = loadedCars.size() - 1;

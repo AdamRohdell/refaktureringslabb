@@ -55,9 +55,9 @@ public class DrawPanel extends JPanel {
                // BufferedImage vehicleImage = ImageIO.read(new File(getFilePath(vehicle)));
                // vehicleImages.put(vehicle.toString(), vehicleImage);
             //}
-            vehicleImages.put("Models.Volvo240", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Models.Volvo240.jpg")));
-            vehicleImages.put("Models.Saab95", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Models.Saab95.jpg")));
-            vehicleImages.put("Models.Scania", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Models.Scania.jpg")));
+            vehicleImages.put("Models.Volvo240", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Volvo240.jpg")));
+            vehicleImages.put("Models.Saab95", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Saab95.jpg")));
+            vehicleImages.put("Models.Scania", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Scania.jpg")));
         } catch (IOException ex) {
             ex.printStackTrace();
         }

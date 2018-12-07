@@ -123,7 +123,7 @@ public class Vehicle implements Movable {
      *
      * @return speedFactor, the base speedfactor of Models.Vehicle
      */
-    protected double speedFactor() {
+    public double speedFactor() {
         return enginePower * 0.01;
     }
 
