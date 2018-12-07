@@ -64,27 +64,12 @@ public class CarController {
         public void actionPerformed(ActionEvent e) {
             for (Car car : cars) {
                 car.move();
-                int x = (int) Math.round(car.getCurrentPos().getX());
-                int y = (int) Math.round(car.getCurrentPos().getY());
-
-                if (x < 0) {
-                    x = 0;
-                    inverseDirection(car);
-                } else if (x + 120 > frame.getWidth()) {
-                    x = frame.getWidth() - 120;
+                if(isOutOfBounds(car)){
                     inverseDirection(car);
                 }
-                if (y < 0) {
-                    y = 0;
-                    inverseDirection(car);
-                } else if (y + 120 > frame.getHeight()) {
-                    y = frame.getHeight() - 120;
-                    inverseDirection(car);
-                }
-
                 //TODO fixa som metod och gå igenom varje bil!
                 frame.getDrawPanel().getVehicles().add(car);
-                frame.drawPanel.moveit(x, y);
+                frame.drawPanel.moveit((int)car.getCurrentPos().getX(),(int)car.getCurrentPos().getY());
 
             }
             // repaint() calls the paintComponent method of the panel
@@ -92,6 +77,25 @@ public class CarController {
         }
     }
 
+    private boolean isOutOfBounds(Car car){
+        int x = (int) Math.round(car.getCurrentPos().getX());
+        int y = (int) Math.round(car.getCurrentPos().getY());
+        if (x < 0) {
+            x = 0;
+            return true;
+        } else if (x + 120 > frame.getWidth()) {
+            x = frame.getWidth() - 120;
+            return true;
+        }
+        if (y < 0) {
+            y = 0;
+            inverseDirection(car);
+        } else if (y + 120 > frame.getHeight()) {
+            y = frame.getHeight() - 120;
+            return true;
+        }
+        return false;
+    }
     // ----------- Methods to connect the buttons to actions ---------------
 
     /**
