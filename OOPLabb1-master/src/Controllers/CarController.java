@@ -30,6 +30,8 @@ public class CarController {
     private CarView frame;
     // A list of cars, modify if needed
     List<Car> cars = new ArrayList<>();
+    // An object that handles all creation of Vehicles.
+    VehicleFactory factory = new VehicleFactory();
 
     //methods:
 
@@ -37,9 +39,9 @@ public class CarController {
         // Instance of this class
         CarController cc = new CarController();
 
-        cc.cars.add(new Volvo240(100, Color.green, "Models.Volvo240", 2));
-        cc.cars.add(new Saab95(100, Color.green, "Models.Saab95", 2, true));
-        cc.cars.add(new Scania(100, Color.green, "Models.Scania", 2));
+        cc.cars.add(new Volvo240(100, Color.green, "Volvo240", 2));
+        cc.cars.add(new Saab95(100, Color.green, "Saab95", 2, true));
+        cc.cars.add(new Scania(100, Color.green, "Scania", 2));
 
         int offset = 0;
 
