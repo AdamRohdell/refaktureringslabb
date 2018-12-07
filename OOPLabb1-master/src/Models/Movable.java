@@ -1,5 +1,7 @@
+package Models;
+
 /**
- * Represents The interface Movable, for movable items.
+ * Represents The interface Models.Movable, for movable items.
  * This has three methods which are move, turnLeft and turnRight.
  */
 public interface Movable {

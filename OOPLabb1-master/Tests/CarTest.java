@@ -1,3 +1,5 @@
+import Models.Car;
+import Models.PassengerCar;
 import org.junit.Test;
 
 import java.awt.*;
@@ -7,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class CarTest {
 
-    Car c = new PassengerCar(200,Color.BLACK,"Volvo240", 4);
+    Car c = new PassengerCar(200,Color.BLACK,"Models.Volvo240", 4);
 
     @Test
     public void getCurrentPos() {

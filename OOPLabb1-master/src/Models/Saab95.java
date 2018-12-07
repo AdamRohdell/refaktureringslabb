@@ -1,7 +1,9 @@
+package Models;
+
 import java.awt.*;
 
 /**
- * Represents a Saab95
+ * Represents a Models.Saab95
  * It's got a turbo to boost the speed.
  */
 public class Saab95 extends PassengerCar {

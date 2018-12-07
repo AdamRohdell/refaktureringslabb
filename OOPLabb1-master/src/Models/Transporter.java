@@ -1,4 +1,7 @@
-import java.awt.*;
+package Models;
+
+import Models.Vehicle;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +21,7 @@ public class Transporter<A extends Vehicle> {
     }
 
     /**
-     * constructor of Transporter
+     * constructor of Models.Transporter
      *
      * @param maxLoad   the max load, int value
      * @param canLoad   boolean, represents if loading is possible or not
@@ -63,7 +66,7 @@ public class Transporter<A extends Vehicle> {
 
     /**
      * Method which loads a Veichle onto the transporter. The amount of Veichles loaded is decided by the variable maxLoad.
-     * The Car needs to be in the proximity of the CarTrailer
+     * The Models.Car needs to be in the proximity of the Models.CarTrailer
      *
      * @param car The car which will get loaded.
      */
@@ -74,7 +77,7 @@ public class Transporter<A extends Vehicle> {
             car.setLoaded(true);
             moveLoadedCars();
         } else if (loadedCars.size() >= maxLoad) {
-            System.out.println("CarTrailer is full");
+            System.out.println("Models.CarTrailer is full");
         } else if (!canLoad) {
             System.out.println("Can only load car when flat bed is down.");
         }
@@ -96,7 +99,7 @@ public class Transporter<A extends Vehicle> {
 
             if (canLoad) {
                 loadedCars.remove(loadedCars.size() - 1);
-                //Update position of car to not the position of CarTrailer
+                //Update position of car to not the position of Models.CarTrailer
                 moveUnloadedCar(car, point);
             } else {
                 System.out.println("Can only unload car when flat bed is down.");

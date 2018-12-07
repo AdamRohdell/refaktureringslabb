@@ -1,3 +1,7 @@
+package Models;
+
+import Models.Car;
+
 import java.awt.*;
 
 /**
@@ -9,12 +13,12 @@ public class Ferry extends Vehicle {
     private Transporter<Car> parent;
 
     /**
-     * The constructor of Ferry
-     * @param enginePower The engine power of the Ferry
-     * @param color The color of the Ferry
-     * @param modelName The model name of the Ferry
+     * The constructor of Models.Ferry
+     * @param enginePower The engine power of the Models.Ferry
+     * @param color The color of the Models.Ferry
+     * @param modelName The model name of the Models.Ferry
      * @param isDocked Whether the ferry is docked or not. Allows for loading of Cars
-     * @param maxLoad The maximum number of Cars which the Ferry can load
+     * @param maxLoad The maximum number of Cars which the Models.Ferry can load
      */
     public Ferry(double enginePower, Color color, String modelName, boolean isDocked,
                  int maxLoad) {
@@ -23,7 +27,7 @@ public class Ferry extends Vehicle {
     }
 
     /**
-     * Method to load cars onto the Ferry
+     * Method to load cars onto the Models.Ferry
      * @param car The car which is to be loaded
      */
     public void loadCar(Car car) {
@@ -51,7 +55,7 @@ public class Ferry extends Vehicle {
     }
 
     /**
-     * Method to load Cars. Ferry must be stationary to dock.
+     * Method to load Cars. Models.Ferry must be stationary to dock.
      */
     public void dock() {
         if (getCurrentSpeed() == 0)

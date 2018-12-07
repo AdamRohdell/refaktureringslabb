@@ -1,3 +1,5 @@
+package Models;
+
 import java.awt.*;
 
 /**
@@ -9,11 +11,11 @@ public class Car extends Vehicle {
     private int nrDoors;
 
     /**
-     * The construtor of Car
-     * @param enginePower The engine power of the Car
-     * @param color The color of the Car
-     * @param modelName The model name of the Car
-     * @param nrDoors The number of doors of the Car
+     * The construtor of Models.Car
+     * @param enginePower The engine power of the Models.Car
+     * @param color The color of the Models.Car
+     * @param modelName The model name of the Models.Car
+     * @param nrDoors The number of doors of the Models.Car
      */
     public Car(double enginePower, Color color, String modelName, int nrDoors) {
         super(enginePower, color, modelName);
@@ -21,7 +23,7 @@ public class Car extends Vehicle {
     }
 
     /**
-     * @return Returns the number of doors on the Car
+     * @return Returns the number of doors on the Models.Car
      */
     public int getNrDoors() {
         return nrDoors;

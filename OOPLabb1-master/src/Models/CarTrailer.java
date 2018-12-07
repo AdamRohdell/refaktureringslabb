@@ -1,3 +1,5 @@
+package Models;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +14,11 @@ public class CarTrailer extends Truck {
     private Transporter<PassengerCar> parent;
 
     /**
-     * Constructor of a CarTrailer
+     * Constructor of a Models.CarTrailer
      *
-     * @param enginePower The engine power of the CarTrailer
-     * @param color       The color of the CarTrailer
-     * @param modelName   The model name of the CarTrailer
+     * @param enginePower The engine power of the Models.CarTrailer
+     * @param color       The color of the Models.CarTrailer
+     * @param modelName   The model name of the Models.CarTrailer
      */
     public CarTrailer(double enginePower, Color color, String modelName, int nrDoors, int maxLoad) {
         super(enginePower, color, modelName, nrDoors);
@@ -59,8 +61,8 @@ public class CarTrailer extends Truck {
     }
 
     /**
-     * Method which loads a Car onto the CarTrailer. The amount of cars loaded is decided by the variable maxLoad.
-     * The Car needs to be in the proximity of the CarTrailer
+     * Method which loads a Models.Car onto the Models.CarTrailer. The amount of cars loaded is decided by the variable maxLoad.
+     * The Models.Car needs to be in the proximity of the Models.CarTrailer
      *
      * @param car The car which will get loaded.
      */
@@ -69,8 +71,8 @@ public class CarTrailer extends Truck {
     }
 
     /**
-     * Method which unloads the Car that's been loaded most recently.
-     * The Car will be unloaded in the CarTrailers proximity.
+     * Method which unloads the Models.Car that's been loaded most recently.
+     * The Models.Car will be unloaded in the CarTrailers proximity.
      */
     public void unloadCar() {
         Position point = new Position(getCurrentPos().x - 5, getCurrentPos().y - 5);

@@ -1,3 +1,4 @@
+import Models.*;
 import org.junit.Test;
 
 import java.awt.*;
@@ -7,7 +8,7 @@ import static org.junit.Assert.*;
 public class CarTrailerTest {
 
     CarTrailer ct = new CarTrailer(200,  Color.BLACK, "Cartrailer", 5, 5);
-    PassengerCar c = new Saab95(200,  Color.BLACK, "Saab95", 4, true);
+    PassengerCar c = new Saab95(200,  Color.BLACK, "Models.Saab95", 4, true);
 
     @Test
     public void Transporter() {
@@ -22,11 +23,11 @@ public class CarTrailerTest {
 
     @Test
     public void loadCar() {
-        PassengerCar c1 = new Saab95(200,  Color.BLACK, "Saab95", 4, true);
-        PassengerCar c2 = new Saab95(200,  Color.BLACK, "Saab95", 4, true);
-        PassengerCar c3 = new Saab95(200,  Color.BLACK, "Saab95", 4, true);
-        PassengerCar c4 = new Saab95(200,  Color.BLACK, "Saab95", 4, true);
-        PassengerCar c5 = new Saab95(200,  Color.BLACK, "Saab95", 4, true);
+        PassengerCar c1 = new Saab95(200,  Color.BLACK, "Models.Saab95", 4, true);
+        PassengerCar c2 = new Saab95(200,  Color.BLACK, "Models.Saab95", 4, true);
+        PassengerCar c3 = new Saab95(200,  Color.BLACK, "Models.Saab95", 4, true);
+        PassengerCar c4 = new Saab95(200,  Color.BLACK, "Models.Saab95", 4, true);
+        PassengerCar c5 = new Saab95(200,  Color.BLACK, "Models.Saab95", 4, true);
 
         ct.startEngine();
         ct.gas(0.4);
@@ -38,7 +39,7 @@ public class CarTrailerTest {
         assertEquals(c.getCurrentPos(), ct.getCurrentPos());
 
         ct = new CarTrailer(200,  Color.BLACK, "Cartrailer", 5, 5);
-        c = new Saab95(200,  Color.BLACK, "Saab95", 4, true);
+        c = new Saab95(200,  Color.BLACK, "Models.Saab95", 4, true);
 
         ct.startEngine();
         ct.gas(1);

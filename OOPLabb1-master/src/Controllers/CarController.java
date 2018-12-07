@@ -1,3 +1,8 @@
+package Controllers;
+
+import Views.*;
+import Models.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -32,14 +37,14 @@ public class CarController {
         // Instance of this class
         CarController cc = new CarController();
 
-        cc.cars.add(new Volvo240(100, Color.green, "Volvo240", 2));
-        cc.cars.add(new Saab95(100, Color.green, "Saab95", 2, true));
-        cc.cars.add(new Scania(100, Color.green, "Scania", 2));
+        cc.cars.add(new Volvo240(100, Color.green, "Models.Volvo240", 2));
+        cc.cars.add(new Saab95(100, Color.green, "Models.Saab95", 2, true));
+        cc.cars.add(new Scania(100, Color.green, "Models.Scania", 2));
 
         int offset = 0;
 
         for(Car car : cc.cars){
-            car.getCurrentPos().y = offset;
+            car.getCurrentPos().setY(offset);
             offset = offset + 100;
         }
 
@@ -92,7 +97,7 @@ public class CarController {
     /**
      * Calls the start engine method for each car once
      */
-    void startEngine() {
+    public void startEngine() {
         for (Car car : cars)
             car.startEngine();
     }
@@ -100,7 +105,7 @@ public class CarController {
     /**
      * Calls the stop engine method for each car once
      */
-    void stopAllCars() {
+    public void stopAllCars() {
         for (Car car : cars)
             car.stopEngine();
     }
@@ -108,7 +113,7 @@ public class CarController {
     /**
      * Calls the gas method for each car once
      */
-    void gas(int amount) {
+    public void gas(int amount) {
         double gas = ((double) amount) / 100;
         for (Car car : cars) {
             car.gas(gas);
@@ -119,7 +124,7 @@ public class CarController {
     /**
      * Calls the brake method for each car once
      */
-    void brake(int amount) {
+    public void brake(int amount) {
         double brake = ((double) amount) / 100;
         for (Car car : cars) {
             car.brake(brake);
@@ -127,11 +132,11 @@ public class CarController {
     }
 
     /**
-     * Calls the set turbo on method for each Saab95 once
+     * Calls the set turbo on method for each Models.Saab95 once
      */
-    void setTurboOn() {
+    public void setTurboOn() {
         for (Car c : cars) {
-            if (c.toString().equals("Saab95")) {
+            if (c.toString().equals("Models.Saab95")) {
                 Saab95 s = (Saab95) c;
                 s.setTurboOn();
             }
@@ -139,11 +144,11 @@ public class CarController {
     }
 
     /**
-     * Calls the set turbo off method for each Saab95 once
+     * Calls the set turbo off method for each Models.Saab95 once
      */
-    void setTurboOff() {
+    public void setTurboOff() {
         for (Car c : cars) {
-            if (c.toString().equals("Saab95")) {
+            if (c.toString().equals("Models.Saab95")) {
                 Saab95 s = (Saab95) c;
                 s.setTurboOff();
             }
@@ -151,11 +156,11 @@ public class CarController {
     }
 
     /**
-     * Calls the lower bed angle method for each Scania once
+     * Calls the lower bed angle method for each Models.Scania once
      */
-    void lowerScaniaFlatBed() {
+    public void lowerScaniaFlatBed() {
         for (Car c : cars) {
-            if (c.toString().equals("Scania")) {
+            if (c.toString().equals("Models.Scania")) {
                 Scania s = (Scania) c;
                 for (int i = 0; i < 70; i++)
                     s.lowerBedAngle();
@@ -164,11 +169,11 @@ public class CarController {
     }
 
     /**
-     * Calls the raise bed angle method for each Scania once
+     * Calls the raise bed angle method for each Models.Scania once
      */
-    void raiseScaniaFlatBed() {
+    public void raiseScaniaFlatBed() {
         for (Car c : cars) {
-            if (c.toString().equals("Scania")) {
+            if (c.toString().equals("Models.Scania")) {
                 Scania s = (Scania) c;
                 for (int i = 0; i < 70; i++)
                     s.raiseBedAngle();

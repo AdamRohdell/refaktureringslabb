@@ -1,7 +1,11 @@
+package Models;
+
+import Models.Truck;
+
 import java.awt.*;
 
 /**
- * Represents a Scania
+ * Represents a Models.Scania
  * it has a flat bed that it can lower and raise between 0 and 70 degrees.
  */
 public class Scania extends Truck {
@@ -9,11 +13,11 @@ public class Scania extends Truck {
     private double flatBedAngle;
 
     /**
-     * The constructor of Scania
-     * @param enginePower The engine power of Scania
-     * @param color The color of Scania
-     * @param modelName The model name of Scania
-     * @param nrDoors The number of doors of Scania
+     * The constructor of Models.Scania
+     * @param enginePower The engine power of Models.Scania
+     * @param color The color of Models.Scania
+     * @param modelName The model name of Models.Scania
+     * @param nrDoors The number of doors of Models.Scania
      */
 
     public Scania(double enginePower, Color color, String modelName, int nrDoors) {

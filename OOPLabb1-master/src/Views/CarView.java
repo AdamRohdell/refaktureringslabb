@@ -1,3 +1,7 @@
+package Views;
+
+import Controllers.CarController;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -20,7 +24,7 @@ public class CarView extends JFrame{
     // The controller member
     private CarController carC;
 
-    DrawPanel drawPanel = new DrawPanel(X, Y-240);
+    public DrawPanel drawPanel = new DrawPanel(X, Y-240);
 
     private JPanel controlPanel = new JPanel();
 
@@ -33,14 +37,14 @@ public class CarView extends JFrame{
     private JButton brakeButton = new JButton("Brake");
     private JButton turboOnButton = new JButton("Saab Turbo on");
     private JButton turboOffButton = new JButton("Saab Turbo off");
-    private JButton liftBedButton = new JButton("Scania Lift Bed");
+    private JButton liftBedButton = new JButton("Models.Scania Lift Bed");
     private JButton lowerBedButton = new JButton("Lower Lift Bed");
 
     private JButton startButton = new JButton("Start all cars");
     private JButton stopButton = new JButton("Stop all cars");
 
     // Constructor
-    CarView(String framename, CarController cc){
+    public CarView(String framename, CarController cc){
         this.carC = cc;
         initComponents(framename);
     }
@@ -101,7 +105,7 @@ public class CarView extends JFrame{
 
         // ------------- ActionListeners -------------
 
-        //Turn turbo on for Saab95
+        //Turn turbo on for Models.Saab95
         turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -109,7 +113,7 @@ public class CarView extends JFrame{
             }
         });
 
-        //Turn turbo off for Saab95
+        //Turn turbo off for Models.Saab95
         turboOffButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -117,7 +121,7 @@ public class CarView extends JFrame{
             }
         });
 
-        //Lower flat bed for Scania
+        //Lower flat bed for Models.Scania
         lowerBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -125,7 +129,7 @@ public class CarView extends JFrame{
             }
         });
 
-        //Raise flat bed for Scania
+        //Raise flat bed for Models.Scania
         liftBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

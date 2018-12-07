@@ -1,3 +1,5 @@
+package Models;
+
 import java.awt.*;
 
 /**
@@ -9,7 +11,7 @@ public class Volvo240 extends PassengerCar {
     public final static double trimFactor = 1.25;
 
     /**
-     * Constructor for Volvo240
+     * Constructor for Models.Volvo240
      * @param nrDoors The number of doors for the car - int
      * @param enginePower - The engine power of the car - double
      * @param color - The color of the car - Color

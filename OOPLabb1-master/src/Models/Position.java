@@ -1,3 +1,5 @@
+package Models;
+
 /**
  * This represents a position using doubles as x and y coordinates.
  */
@@ -6,7 +8,7 @@ public class Position {
     double y;
 
     /**
-     * constructor of the class Position
+     * constructor of the class Models.Position
      *
      * @param x the x coordinate
      * @param y the y coordinate

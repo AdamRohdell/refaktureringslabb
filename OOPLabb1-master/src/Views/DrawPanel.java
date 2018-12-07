@@ -1,8 +1,12 @@
+package Views;
+
+import Models.Position;
+import Models.Vehicle;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,9 +27,9 @@ public class DrawPanel extends JPanel {
     private List<Vehicle> vehicles = new ArrayList<>();
 
     // TODO: Make this genereal for all cars (typ gå igenom en lista med alla bilar och kolla deras position...)
-    void moveit(int x, int y) {
-        vehiclePoint.x = x;
-        vehiclePoint.y = y;
+    public void moveit(int x, int y) {
+        vehiclePoint.setX(x);
+        vehiclePoint.setY(y);
     }
 
     public List<Vehicle> getVehicles() {
@@ -47,13 +51,13 @@ public class DrawPanel extends JPanel {
         //print an error message in case file is not found with a try/catch block
 
         try {
-            //for (Vehicle vehicle: vehicles) {
+            //for (Models.Vehicle vehicle: vehicles) {
                // BufferedImage vehicleImage = ImageIO.read(new File(getFilePath(vehicle)));
                // vehicleImages.put(vehicle.toString(), vehicleImage);
             //}
-            vehicleImages.put("Volvo240", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Volvo240.jpg")));
-            vehicleImages.put("Saab95", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Saab95.jpg")));
-            vehicleImages.put("Scania", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Scania.jpg")));
+            vehicleImages.put("Models.Volvo240", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Models.Volvo240.jpg")));
+            vehicleImages.put("Models.Saab95", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Models.Saab95.jpg")));
+            vehicleImages.put("Models.Scania", ImageIO.read(new File("src" + File.separator + "pics" + File.separator +"Models.Scania.jpg")));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -74,9 +78,9 @@ public class DrawPanel extends JPanel {
         super.paintComponent(g);
 
         for (Vehicle v : vehicles) {
-            //Vehicle v = vehicles.get(i);
-            int x = (int) Math.round(v.getCurrentPos().x);
-            int y = (int) Math.round(v.getCurrentPos().y);
+            //Models.Vehicle v = vehicles.get(i);
+            int x = (int) Math.round(v.getCurrentPos().getX());
+            int y = (int) Math.round(v.getCurrentPos().getY());
             g.drawImage(vehicleImages.get(v.toString()), x, y, null); // see javadoc for more info on the parameters
         }
     }
